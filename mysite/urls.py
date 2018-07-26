@@ -20,4 +20,6 @@ import quiz.views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', quiz.views.home, name='home'),
+    path('questions/<int:question_id>/', quiz.views.question_detail,
+         name='question_detail'),
 ]
