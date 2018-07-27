@@ -12,6 +12,13 @@ class Question(models.Model):
     def get_next_question(self):
         return Question.objects.filter(id__gt=self.id).first()
 
+    def is_correct(self, option_id):
+        try:
+            return self.options.get(id=option_id).is_correct
+        except Option.DoesNotExist:
+            return False
+
+
 class Option(models.Model):
     label = models.CharField(max_length=100)
     question = models.ForeignKey(
