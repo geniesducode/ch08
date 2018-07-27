@@ -4,7 +4,7 @@
 
 {% block content %}
   <div class="question">
-    <div class="question-number">Question 1/12</div>
+    <div class="question-number">Question {{ question_number }} / {{ nb_questions }}</div>
     <div class="question-body">
       <h1 class="question-title">{{ question.label }}</h1>
       <form method="post" action="">
