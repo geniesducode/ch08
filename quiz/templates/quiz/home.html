@@ -1,24 +1,22 @@
-{% load static %}
-<!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>L'incroyable quiz poissons</title>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-  </head>
-  <body>
-    <div class="container">
-      <h1 class="text-center">À quel point suis-je à la ramasse sur les poissons?</h1>
-      <p>
-        Ils sont parfois aussi mignons que des chatons, aussi intelligents que des bergers allemands, aussi charmeurs que des perroquets, les animaux qui vivent sous l’eau. On croit savoir qui ils sont, où ils crèchent et comment ils passent leurs après-midi... Et bien ça ne saurait durer très longtemps! Ce petit quiz va remettre les pendules à l’heure, celle d’un océan de connaissances à rattraper.
-      </p>
-      <p>
-        Elle n’est pas froide et on a pied: jetons-nous à l’eau.
-      </p>
-      <div class="text-center">
-        <a class="button" href="question_detail.html">C'est parti</a>
-      </div>
-    </div>
-  </body>
-</html>
+{% extends "quiz/base.html" %}
+
+{% block title %}L'incroyable quiz sur les poissons{% endblock %}
+
+{% block content %}
+  <h1 class="text-center">À quel point suis-je à la ramasse sur les poissons?</h1>
+  <p>
+    Ils sont parfois aussi mignons que des chatons, aussi intelligents que des
+    bergers allemands, aussi charmeurs que des perroquets, les animaux qui
+    vivent sous l’eau. On croit savoir qui ils sont, où ils crèchent et comment
+    ils passent leurs après-midi... Et bien ça ne saurait durer très longtemps!
+    Ce petit quiz va remettre les pendules à l’heure, celle d’un océan de
+    connaissances à rattraper.
+  </p>
+  <p>
+    Elle n’est pas froide et on a pied: jetons-nous à l’eau.
+  </p>
+
+  <div class="text-center">
+    <a class="button" href="question_detail.html">C'est parti</a>
+  </div>
+{% endblock %}
