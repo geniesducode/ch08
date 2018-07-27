@@ -7,7 +7,8 @@
     <div class="question-number">Question 1/12</div>
     <div class="question-body">
       <h1 class="question-title">{{ question.label }}</h1>
-      <form method="post" action="results.html">
+      <form method="post" action="">
+        {% csrf_token %}
         {% for option in options %}
           <label>
             <input type="radio" name="option" value="{{ option.id }}">
