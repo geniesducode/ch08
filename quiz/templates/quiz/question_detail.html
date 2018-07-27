@@ -8,9 +8,13 @@
     <div class="question-body">
       <h1 class="question-title">{{ question.label }}</h1>
       <form method="post" action="results.html">
-        <label><input type="radio" name="option" value="20 km/h"> 20 km/h</label>
-        <label><input type="radio" name="option" value="40 km/h"> 40 km/h</label>
-        <label><input type="radio" name="option" value="80 km/h"> 80 km/h</label>
+        {% for option in options %}
+          <label>
+            <input type="radio" name="option" value="{{ option.id }}">
+            {{ option.label }}
+          </label>
+        {% endfor %}
+
         <button type="submit">Envoyer</button>
       </form>
     </div>
