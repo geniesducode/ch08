@@ -2,7 +2,8 @@ from django.shortcuts import render, get_object_or_404
 from quiz.models import Question
 
 def home(request):
-    return render(request, 'quiz/home.html')
+    question = Question.objects.first()
+    return render(request, 'quiz/home.html', {'question': question})
 
 def question_detail(request, question_id):
     question = get_object_or_404(Question, id=question_id)
