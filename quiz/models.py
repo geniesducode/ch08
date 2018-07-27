@@ -9,6 +9,8 @@ class Question(models.Model):
     def get_number(self):
         return Question.objects.filter(id__lte=self.id).count()
 
+    def get_next_question(self):
+        return Question.objects.filter(id__gt=self.id).first()
 
 class Option(models.Model):
     label = models.CharField(max_length=100)
