@@ -3,11 +3,32 @@
 {% block title %}{{ title }}{% endblock %}
 
 {% block content %}
-  <h1 class="text-center">{{ title }}</h1>
-  <h2 class="text-center">{{ score }}%</h2>
+<div class="text-center">
+  <h1>{{ title }}</h1>
+  <h2>{{ score }}%</h2>
   <p>{{ description }}</p>
-  <div class="text-center">
-    <a class="button button-secondary"
-       href="{% url 'home' %}">Réessayer</a>
-  </div>
+  <h3>Les meilleurs résultats</h3>
+</div>
+<table class="h-align">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Nom</th>
+      <th>Score</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for result in leaderboard %}
+    <tr>
+      <td class="text-right">{{ forloop.counter }}</td>
+      <td class="text-left">{{ result.name }}</td>
+      <td class="text-right">{{ result.score }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+<div class="text-center">
+  <a class="button button-secondary margin-top"
+      href="{% url 'home' %}">Réessayer</a>
+</div>
 {% endblock %}

@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils import timezone
 
 class Question(models.Model):
     label = models.CharField(max_length=100)
@@ -28,3 +29,10 @@ class Option(models.Model):
 
     def __str__(self):
         return self.label
+
+
+class Result(models.Model):
+    name = models.CharField(max_length=50)
+    score = models.IntegerField()
+    # Ce champ permet de savoir quand le résultat a été créé, mais il n'est affiché nulle part
+    created_at = models.DateTimeField(default=timezone.now)

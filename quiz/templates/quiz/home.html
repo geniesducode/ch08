@@ -16,7 +16,11 @@
     Elle n’est pas froide et on a pied: jetons-nous à l’eau.
   </p>
 
-  <div class="text-center">
-    <a class="button" href="{% url 'question_detail' question_id=question.id %}">C'est parti</a>
-  </div>
+  <form method="post" action="">
+    {% csrf_token %}
+    <div class="text-center">
+      {{ form.as_p }}
+      <button type="submit" class="margin-top">C'est parti</button>
+    </div>
+  </form>
 {% endblock %}

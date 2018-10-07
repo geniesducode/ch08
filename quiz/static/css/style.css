@@ -26,6 +26,14 @@ p {
   text-align: center;
 }
 
+.text-right {
+  text-align: right;
+}
+
+.text-left {
+  text-align: left;
+}
+
 button:hover, .button:hover {
   background-color: #8cbfec;
 }
@@ -33,14 +41,17 @@ button:hover, .button:hover {
 button, .button {
   padding: 20px;
   display: inline-block;
-  color: white;
   font-size: inherit;
   font-family: inherit;
   text-decoration: none;
   border: none;
   border-radius: 12px;
   cursor: pointer;
+}
+
+button, .button, th {
   background-color: #57a7ec;
+  color: white;
 }
 
 .button-secondary {
@@ -67,7 +78,7 @@ button, .button {
   padding: 5px 0;
 }
 
-.question button {
+.question button, .margin-top {
   margin-top: 20px;
 }
 
@@ -87,4 +98,28 @@ button, .button {
   font-size: 1.5rem;
   font-weight: bold;
   border-radius: 12px 12px 0 0;
+}
+
+th, td {
+  padding: 10px;
+}
+
+td {
+  background-color: white;
+}
+
+/*
+ Les erreurs de formulaire sont automatiquement affichées dans un élément <ul
+ class="errorlist"> par Django. Ce code permet de mettre en évidence les erreurs
+ potentielles dans le formulaire.
+*/
+.errorlist {
+  list-style-type: none;
+  color: red;
+  font-size: 1rem;
+}
+
+.h-align {
+  margin-left: auto;
+  margin-right: auto;
 }
